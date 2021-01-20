@@ -1,12 +1,13 @@
 import * as Style from './styles';
-import HeaderForm from '../../components/layout/header/HeaderForm';
+
+import Header from '../../components/layout/header/Header';
 
 const HomePage = () => (
   <>
-  <HeaderForm />
-  <Style.Container>
-    <Style.Title>This is home page</Style.Title>
-  </Style.Container>
+  <Header />
+  <Style.MainContainer>
+    <Style.TitleContent>This is home page</Style.TitleContent>
+  </Style.MainContainer>
   </>
 );
 

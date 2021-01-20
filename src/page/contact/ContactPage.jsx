@@ -1,12 +1,13 @@
 import * as Style from './styles';
-import HeaderForm from '../../components/layout/header/HeaderForm';
+
+import Header from '../../components/layout/header/Header';
 
 const ContactPage = () => (
   <>
-  <HeaderForm />
-  <Style.Container>
-    <Style.Title>This is contact page</Style.Title>
-  </Style.Container>
+  <Header />
+  <Style.MainContainer>
+    <Style.TitleContent>This is contact page</Style.TitleContent>
+  </Style.MainContainer>
   </>
 );
 
