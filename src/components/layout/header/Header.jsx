@@ -1,3 +1,5 @@
+import { BrowserRouter as Router, Link } from 'react-router-dom';
+
 import * as Style from './styles';
 
 const Header = () => (
@@ -5,13 +7,13 @@ const Header = () => (
     <Style.HeaderWrapper>
       <Style.HeaderContentContainer>
         <Style.HeaderContentItem>
-          <Style.TitleLink href="#0">HOME</Style.TitleLink>
+          <Link to="/home">HOME</Link>
         </Style.HeaderContentItem>
         <Style.HeaderContentItem>
-          <Style.TitleLink href="#0">ABOUT</Style.TitleLink>
+            <Link to="/about">About</Link>
         </Style.HeaderContentItem>
         <Style.HeaderContentItem>
-          <Style.TitleLink href="#0">CONTACT</Style.TitleLink>
+          <Link to="/contact">Contact</Link>
         </Style.HeaderContentItem>
       </Style.HeaderContentContainer>
     </Style.HeaderWrapper>
