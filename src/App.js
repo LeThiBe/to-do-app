@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import {  BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import Home from './pages/Home';
@@ -12,7 +11,7 @@ function App() {
       <Router>
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route path="/about" component={About} />
+          <Route path="/about" component={(props) => (<About number={1}  {...props}/>)} />)}
           <Route path="/contact" component={Contact} />
         </Switch>
       </Router>
