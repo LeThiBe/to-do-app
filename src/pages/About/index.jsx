@@ -2,7 +2,7 @@ import * as Style from './styles';
 
 import Header from '../../components/layout/header/Header';
 
-const AboutPage = () => (
+const About = () => (
   <>
   <Header />
   <Style.MainContainer>
@@ -11,4 +11,4 @@ const AboutPage = () => (
   </>
 );
 
-export default AboutPage;
+export default About;

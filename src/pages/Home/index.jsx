@@ -4,7 +4,7 @@ import * as Style from './styles';
 
 import Header from '../../components/layout/header/Header';
 
-class HomePage extends Component {
+class Home extends Component {
   render() {
     return (
       <>
@@ -17,4 +17,4 @@ class HomePage extends Component {
   }
 }
 
-export default HomePage;
+export default Home;
