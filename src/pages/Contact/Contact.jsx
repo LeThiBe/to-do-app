@@ -2,7 +2,7 @@ import * as Style from './styles';
 
 import Header from '../../components/layout/header/Header';
 
-const ContactPage = () => (
+const Contact = () => (
   <>
   <Header />
   <Style.MainContainer>
@@ -11,4 +11,4 @@ const ContactPage = () => (
   </>
 );
 
-export default ContactPage;
+export default Contact;

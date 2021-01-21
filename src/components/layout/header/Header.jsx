@@ -7,7 +7,7 @@ const Header = () => (
     <Style.HeaderWrapper>
       <Style.HeaderContentContainer>
         <Style.HeaderContentItem>
-          <Link to="/home">HOME</Link>
+          <Link to="/">HOME</Link>
         </Style.HeaderContentItem>
         <Style.HeaderContentItem>
             <Link to="/about">About</Link>
