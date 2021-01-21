@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import * as Style from './styles';
 
@@ -28,18 +29,23 @@ class About extends Component {
   }
 
   render() {
+    const { point: count} = this.state;
     return (
       <>
         <Header />
         <Style.MainContainer>
           <Style.TitleContent>This is about page</Style.TitleContent>
           <Style.ButtonIncrease onClick={this.decrease}>-</Style.ButtonIncrease>
-          <Style.NumberPoint>Point is {this.state.point}</Style.NumberPoint>
+          <Style.NumberPoint>Point is {count} </Style.NumberPoint>
           <Style.ButtonIncrease onClick={this.increase}>+</Style.ButtonIncrease>
         </Style.MainContainer>
       </>
     );
   }
+}
+
+About.propTypes = {
+  number: PropTypes.number,
 }
 
 export default About;
