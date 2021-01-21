@@ -11,18 +11,15 @@ class About extends Component {
     this.state = {
       point: 0,
     };
-
-    this.increase = this.increase.bind(this);
-    this.decrease = this.decrease.bind(this);
   }
 
-  increase() {
+  increase = () => {
     this.setState((state, props) => ({
       point: state.point + props.number
     }));
   }
 
-  decrease() {
+  decrease = () => {
     this.setState((state, props) => ({
       point: state.point - props.number
     }));
