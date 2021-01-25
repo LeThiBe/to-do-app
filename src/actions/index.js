@@ -1,8 +1,8 @@
-import * as types from './types';
+import * as types from '../constants/actionTypes';
 
-export function setData(postData) {
+export function getPostData(payload) {
   return {
     type: types.GET_DATA,
-    postData
+    payload
   }
 }

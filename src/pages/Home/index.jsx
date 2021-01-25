@@ -1,13 +1,22 @@
 import React, {Component} from "react"
 import { connect } from "react-redux";
+import { bindActionCreators } from 'redux';
 
 import * as Style from './styles';
 
 import Header from '../../components/layout/header/Header';
+import {getPostData as getPostDataAction } from '../../actions';
+import {postData} from "../../api"
+import {GET_DATA} from '../../constants/actionTypes';
 
 class Home extends Component {
+  componentDidMount() {
+    this.props.getPostData(postData)
+  }
+
   render() {
-    const {postData} = this.props.postData
+    const {postData} = this.props
+
 
     return (
       <>
@@ -35,7 +44,7 @@ class Home extends Component {
                 }
               </Style.Tbodytable>
             </Style.TableContent>
-          </div> 
+          </div>
         </Style.MainContainer>
       </>
     );
@@ -43,9 +52,18 @@ class Home extends Component {
 }
 
 const mapStateToProps = state => {
+  console.log(state);
   return {
     postData: state.postData
   };
 };
 
-export default connect(mapStateToProps)(Home);
+
+const mapDispatchToProps = (dispatch)  => {
+  return {
+    getPostData: (params) =>
+      dispatch(getPostDataAction(params))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home);

@@ -1,6 +1,6 @@
 
 import {combineReducers} from 'redux';
-import postData from './postDataReducers';
+import postData from './postReducers';
 
 export default combineReducers({
     postData
