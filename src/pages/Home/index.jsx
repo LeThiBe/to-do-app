@@ -1,13 +1,12 @@
 import React, {Component} from "react"
 import { connect } from "react-redux";
-import { bindActionCreators } from 'redux';
 
 import * as Style from './styles';
 
 import Header from '../../components/layout/header/Header';
 import {getPostData as getPostDataAction } from '../../actions';
 import {postData} from "../../api"
-import {GET_DATA} from '../../constants/actionTypes';
+import PostItem from './view/PostItem';
 
 class Home extends Component {
   componentDidMount() {
@@ -16,7 +15,6 @@ class Home extends Component {
 
   render() {
     const {postData} = this.props
-
 
     return (
       <>
@@ -35,11 +33,7 @@ class Home extends Component {
               <Style.Tbodytable>
                 {
                   postData && postData.map(data => (
-                    <Style.Rowtable key={data.id}>
-                      <Style.ContentField>{data.id}</Style.ContentField>
-                      <Style.ContentField>{data.title}</Style.ContentField>
-                      <Style.ContentField>{data.body}</Style.ContentField>
-                    </Style.Rowtable>
+                    <PostItem post={data} key={data.id}/>
                   ))
                 }
               </Style.Tbodytable>
@@ -51,19 +45,13 @@ class Home extends Component {
   }
 }
 
-const mapStateToProps = state => {
-  console.log(state);
-  return {
-    postData: state.postData
-  };
-};
+const mapStateToProps = state => ({
+  postData: state.postData
+});
 
-
-const mapDispatchToProps = (dispatch)  => {
-  return {
-    getPostData: (params) =>
-      dispatch(getPostDataAction(params))
-  }
-}
+const mapDispatchToProps = (dispatch)  => ({
+  getPostData: (params) =>
+    dispatch(getPostDataAction(params))
+})
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);

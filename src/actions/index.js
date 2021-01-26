@@ -1,8 +1,8 @@
-import * as types from '../constants/actionTypes';
+import {ActionTypes} from '../constants/actionTypes';
 
 export function getPostData(payload) {
   return {
-    type: types.GET_DATA,
+    type: ActionTypes.GET_POST_DATA,
     payload
   }
 }
