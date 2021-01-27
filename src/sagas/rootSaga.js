@@ -1,8 +1,9 @@
-import { takeLatest } from 'redux-saga/effects';
+import { all, fork } from 'redux-saga/effects';
 
-import workerSaga from './PostSaga';
-import {ActionTypes} from '../constants/actionTypes';
+import postSaga from './postSaga';
 
 export default function* rootSaga() {
-  yield takeLatest(ActionTypes.GET_POST_DATA, workerSaga);
+  yield all([
+    fork(postSaga),
+  ]);
 }
