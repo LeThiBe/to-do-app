@@ -1,7 +1,6 @@
 import { put, call, all, takeLatest } from 'redux-saga/effects';
 
-import { getPostDataSuccess } from '../actions';
-import {ActionTypes} from '../constants/actionTypes';
+import { getPostDataSuccess, getPostData } from '../actions';
 import getPostsList from '../api';
 
 export function* getPostDataSaga() {
@@ -12,6 +11,6 @@ export function* getPostDataSaga() {
 
 export default function* postSaga() {
   yield all([
-    takeLatest(ActionTypes.GET_POST_DATA, getPostDataSaga),
+    takeLatest(getPostData, getPostDataSaga),
   ]);
 }
