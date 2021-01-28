@@ -5,10 +5,9 @@ import * as Style from './styles';
 import Header from '../../components/layout/header/Header';
 
 const Contact = () => {
-  const twoDigit = (input) => {
-    var twodigit = input >= 10 ? input : "0"+ input.toString();
-
-    return twodigit;
+  const renderResult = (number) => {
+     debugger;
+    return `0${number}`.slice(-2);
   }
 
   const [number, setNumber] = useState(0);
@@ -25,7 +24,7 @@ const Contact = () => {
       <Style.MainContainer>
         <Style.TitleContent>This is contact page</Style.TitleContent>
         <Style.TitleNumber>Number is:</Style.TitleNumber>
-        <Style.ContentNumber>{twoDigit(number)}</Style.ContentNumber>
+        <Style.ContentNumber>{renderResult(number)}</Style.ContentNumber>
       </Style.MainContainer>
     </>
   )
