@@ -6,16 +6,17 @@ import Header from '../../components/layout/header/Header';
 
 const Contact = () => {
   const renderResult = (number) => {
-     debugger;
     return `0${number}`.slice(-2);
   }
 
   const [number, setNumber] = useState(0);
 
   useEffect(() => {
-    setTimeout(() => {
+    const timer = setTimeout(() => {
       setNumber(number + 1);
     }, 1000)
+
+    return () => clearTimeout(timer);
   }, [number]);
 
   return (
