@@ -5,11 +5,10 @@ import * as Style from './styles';
 import Header from '../../components/layout/header/Header';
 
 const Contact = () => {
+  const [number, setNumber] = useState(0);
   const renderResult = (number) => {
     return `0${number}`.slice(-2);
   }
-
-  const [number, setNumber] = useState(0);
 
   useEffect(() => {
     const timer = setTimeout(() => {

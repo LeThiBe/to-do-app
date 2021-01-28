@@ -9,7 +9,11 @@ import PostItem from './view/PostItem';
 
 class Home extends Component {
   componentDidMount() {
-    this.props.getPostData()
+    const {postData} = this.props
+
+    if(!postData.length) {
+      this.props.getPostData()
+    }
   }
 
   render() {
