@@ -4,13 +4,12 @@ import { connect } from "react-redux";
 import * as Style from './styles';
 
 import Header from '../../components/layout/header/Header';
-import {getPostData as getPostDataAction } from '../../actions';
-import {postData} from "../../api"
+import {getPostData as getPostDataAction} from '../../actions';
 import PostItem from './view/PostItem';
 
 class Home extends Component {
   componentDidMount() {
-    this.props.getPostData(postData)
+    this.props.getPostData()
   }
 
   render() {
@@ -50,8 +49,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = (dispatch)  => ({
-  getPostData: (params) =>
-    dispatch(getPostDataAction(params))
+  getPostData: () =>
+    dispatch(getPostDataAction())
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);
