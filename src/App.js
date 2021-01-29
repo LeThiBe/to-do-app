@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import configureStore from "./configureStore";
+import Login from './pages/Login';
 
 const store = configureStore();
 
@@ -15,6 +16,7 @@ function App() {
       <Provider store={store}>
         <Router>
           <Switch>
+            <Route exact path="/login" component={Login} />
             <Route exact path="/" component={Home} />
             <Route path="/about" component={(props) => (<About number={1}  {...props}/>)} />)}
             <Route path="/contact" component={Contact} />
